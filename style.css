@@ -1239,6 +1239,85 @@ body {
   line-height: 1.5;
 }
 
+
+/* =========================================================
+   KODE ANIMASI (PAKSA MASUK)
+   ========================================================= */
+
+/* 1. Teks Berjalan (Ticker) */
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: #2f6b3a;
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-bottom: 2px solid #1e4624;
+}
+.ticker {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker 35s linear infinite;
+}
+@keyframes ticker {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* 2. Animasi Daun Jatuh */
+.leaf {
+  position: absolute;
+  z-index: 2;
+  background: #4CAF50;
+  border-radius: 0 50% 50% 50%;
+  opacity: 0.6;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  filter: blur(1px);
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  0% { top: -10%; transform: translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { top: 110%; transform: translateX(100px) rotate(360deg); opacity: 0; }
+}
+.leaf-1 { left: 10%; width: 15px; height: 15px; animation-duration: 8s; animation-delay: 0s; }
+.leaf-2 { left: 25%; width: 25px; height: 25px; animation-duration: 12s; animation-delay: 2s; background: #81C784; }
+.leaf-3 { left: 40%; width: 12px; height: 12px; animation-duration: 10s; animation-delay: 4s; }
+.leaf-4 { left: 60%; width: 20px; height: 20px; animation-duration: 14s; animation-delay: 1s; background: #2E7D32; }
+.leaf-5 { left: 75%; width: 18px; height: 18px; animation-duration: 9s; animation-delay: 3s; }
+.leaf-6 { left: 85%; width: 22px; height: 22px; animation-duration: 11s; animation-delay: 5s; background: #81C784; }
+.leaf-7 { left: 50%; width: 14px; height: 14px; animation-duration: 13s; animation-delay: 6s; }
+.leaf-8 { left: 5%; width: 28px; height: 28px; animation-duration: 15s; animation-delay: 7s; background: #66BB6A; }
+
+/* 3. Animasi Background Zoom */
+@keyframes bgZoom {
+  0% { background-size: 100%; background-position: center; }
+  100% { background-size: 115%; background-position: center top; }
+}
+
+/* 4. Animasi Kartu Melayang */
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* 5. Animasi Neon Glow */
+@keyframes neonGlow {
+  0% { text-shadow: 0 0 10px rgba(76,175,80,0.5), 0 0 20px rgba(76,175,80,0.3); }
+  100% { text-shadow: 0 0 20px rgba(76,175,80,0.9), 0 0 50px rgba(76,175,80,0.6); }
+}
+
+/* 6. Animasi Garis Pulsar */
+@keyframes pulseLine {
+  0% { opacity: 0.5; width: 80px; }
+  50% { opacity: 1; width: 150px; }
+  100% { opacity: 0.5; width: 80px; }
+}
+
 .info-box strong {
   color: #c47e00;
 }
